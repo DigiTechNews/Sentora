@@ -13,6 +13,16 @@ echo "#  $DIGITECHNEWS_INFO $SENTORA_INSTALLER_VERSION  #"
 echo "############################################################"
 echo "################# DigiTechNews.net ######################"
 
+# Installing Repositories
+REPO_INSTALLER="rpm -Uvh"
+echo -e "\n-- Installing REPO LIST"
+if [[ "$OS" = "CentOs" ]]; then
+    $REPO_INSTALLER https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    $REPO_INSTALLER https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+elif [[ "$OS" = "Ubuntu" ]]; then
+    echo "Nothing for Ubuntu"
+fi
+
 #PHP Update
 echo -e "\n-- Updating PHP 5.4 to PHP 7.1W --"
 if [[ "$OS" = "CentOs" ]]; then

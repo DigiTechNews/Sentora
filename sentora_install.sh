@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Official Sentora Automated Installation Script
+# Official DigitechNews Sentora Automated Installation Script
 # =============================================
 #
 #  This program is free software: you can redistribute it and/or modify

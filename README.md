@@ -27,7 +27,7 @@ Preliminary install information can be found here: [Sentora Documentation](http:
  
 To install use the latest 'stable' and officially supported version, please use the following command:
 ```
-bash <(curl -L -Ss http://digitechnews.net/sentora_install)
+bash <(curl -L -Ss http://digitechnews.net/sentora_install.sh)
 ```
 
 Please report any errors that you may find with the installers to our [bug tracking system](https://https://github.com/digitechnews/sentora/issues).

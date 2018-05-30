@@ -1,9 +1,9 @@
 DigiTechNews Sentora Installers
 ==================
 
-## Why use DigiTechNews Sentora Installer ? ##
+### Why use DigiTechNews Sentora Installer ? ###
 
-# Our installer comes with the following packages installed: #
+#### Our installer comes with the following packages installed: ####
 
 - Repositories: fedoraproject and webtatic
 - Packages: nano, htop, varnish, postfix, proftpd and dovecot

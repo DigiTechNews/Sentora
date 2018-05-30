@@ -34,6 +34,11 @@ Please report any errors that you may find with the installers to our [bug track
   
 #### Upgrade and Uninstaller scripts ####
 
+## How to only update PHP ##
+```
+bash <(curl -L -Ss http://digitechnews.net/sentora_php71w_update.sh)
+```
+
 Upgrade scripts are still available on this repository for later use and/or reference purposes only. At present we DO NOT recommend their use.
 
 Uninstaller scripts, much like the Upgrade scripts are not recommended for use at present but we also need to make it clear that although they remove most of the packages installed by the Sentora Installation scripts they will not leave your OS in his initial state given the large amount of customisations that our installation scripts make.

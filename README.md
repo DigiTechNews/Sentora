@@ -18,9 +18,12 @@ Welcome to the Sentora Installation Script Git repository, this provides a centr
 
 Our installation script currently support the following operating systems/distributions:
 
-* CentOS 6 and 7
-* Ubuntu 12.04 and 14.04
-* Debian 7 and 8
+- CentOS 6.x and 7.x 
+- [![CentOS](http://digitechnews.net/sentora/centos-logo.png)](https://www.centos.org)
+- Ubuntu 12.04 and 14.04
+- [![Ubuntu](http://digitechnews.net/sentora/ubuntu-logo.png)](http://www.ubuntu.com)
+- Debian 7 and 8
+- [![Ubuntu](http://digitechnews.net/sentora/debian-logo-2.png)](http://www.debian.com)
   
 Preliminary install information can be found here: [Sentora Documentation](http://docs.sentora.org/index.php?node=7)
  
@@ -33,7 +36,8 @@ Please report any errors that you may find with the installers to our [bug track
   
 #### Upgrade and Uninstaller scripts ####
 
-## How to only update PHP ##
+## How to only update PHP ## 
+[![PHP](http://digitechnews.net/sentora/php-logo-128x128.png)](http://php.org)
 ```
 bash <(curl -L -Ss http://digitechnews.net/sentora/sentora_php71w_update.sh)
 ```

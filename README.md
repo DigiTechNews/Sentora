@@ -1,3 +1,4 @@
+[![DigiTechNews](https://avatars2.githubusercontent.com/u/39738905?s=40&v=4?branch=master)](http://digitechnews.net)
 DigiTechNews Sentora Installers
 ==================
 
@@ -7,15 +8,13 @@ DigiTechNews Sentora Installers
 
 - Repositories: fedoraproject and webtatic
 - Packages: nano, htop, varnish, postfix, proftpd and dovecot
-- Updates: php5.4 to php71w, phpmyadmin 4.8.1
+- Updates: phpmyadmin 4.8.1
 - Sentora Themes: Zentora
-- Sentora Apps: PowerPlug and ELFileManager
-
-[DigiTechNews](http://digitechnews.net)
+- Sentora Apps: PowerPlug, ELFileManager, repo_browser, sentastico
 
 Welcome to the Sentora Installation Script Git repository, this provides a central place to store, version and distribute Sentora installer and upgrade scripts from.
 
-## How to install Sentora ##
+## How to install Sentora [![Sentora](http://sentora.org/img/sentora_logo.png)](http://sentora.org/) ##
 
 Our installation script currently support the following operating systems/distributions:
 
@@ -27,7 +26,7 @@ Preliminary install information can be found here: [Sentora Documentation](http:
  
 To install use the latest 'stable' and officially supported version, please use the following command:
 ```
-bash <(curl -L -Ss http://digitechnews.net/sentora_install.sh)
+bash <(curl -L -Ss http://digitechnews.net/sentora/sentora_install.sh)
 ```
 
 Please report any errors that you may find with the installers to our [bug tracking system](https://https://github.com/digitechnews/sentora/issues).
@@ -36,7 +35,7 @@ Please report any errors that you may find with the installers to our [bug track
 
 ## How to only update PHP ##
 ```
-bash <(curl -L -Ss http://digitechnews.net/sentora_php71w_update.sh)
+bash <(curl -L -Ss http://digitechnews.net/sentora/sentora_php71w_update.sh)
 ```
 
 Upgrade scripts are still available on this repository for later use and/or reference purposes only. At present we DO NOT recommend their use.

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Official DigitechNews Sentora Automated Installation Script
+# Official Sentora Automated Installation Script
 # =============================================
 #
 #  This program is free software: you can redistribute it and/or modify
@@ -857,7 +857,7 @@ if [[ ("$OS" = "CentOs" && "$VER" = "7") ||
 fi
 
 
-#--- PHP
+#--- PHP 5.4 Sentora
 echo -e "\n-- Installing and configuring PHP"
 if [[ "$OS" = "CentOs" ]]; then
     $PACKAGE_INSTALLER php php-devel php-gd php-mbstring php-intl php-mysql php-xml php-xmlrpc
@@ -1212,16 +1212,7 @@ cp /etc/sentora/panel/etc/apps/phpmyadmin-bkp/config.inc.php /etc/sentora/panel/
 chmod 777 /etc/sentora/panel/etc/apps/phpmyadmin
 echo -e "\n-- phpMyAdmin 4.8.1 Installed --"
 
-# Installing Zppy Repositories
-REPO_INSTALLER="rpm -Uvh"
-echo -e "\n-- Installing REPO LIST"
-if [[ "$OS" = "CentOs" ]]; then
-    $REPO_INSTALLER https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-    $REPO_INSTALLER https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
-elif [[ "$OS" = "Ubuntu" ]]; then
-    echo "Nothing for Ubuntu"
-fi
-
+#ZPPY Repositories
 echo -e "\n-- Installing ZPPY REPO LIST --"
 ZPPY_INSTALLER="zppy repo add"
 $ZPPY_INSTALLER zppy-repo.mach-hosting.com/repo
@@ -1230,21 +1221,35 @@ echo -e "\n -- Installing Features --"
 zppy update
 zppy install powerplug
 zppy install ELFileManager
-echo -e "\n-- PowerPlug And ELFileManager installed successfully --"
+zppy install repo_browser
+zppy install sentastico
+echo -e "\n-- Zppy modules installed successfully --"
 
-#PHP Update
-echo -e "\n-- Updating PHP 5.4 to PHP 7.1W --"
-if [[ "$OS" = "CentOs" ]]; then
-    service httpd stop
-    sudo apachectl stop
-    yum remove -y php-mysql php-gd php-mcrypt php-mbstring php-opcache php-pdo php-cli php-commun php-devel php-xmlrpc php-xml php-intl php-common php-common-5.4.16-43.el7_4.x86_64
-    yum install -y php71w php71w-mysql php71w-gd php71w-mcrypt php71w-mbstring php71w-opcache php71w-pdo php71w-cli php71w-common php71w-devel php71w-xmlrpc php71w-xml php71w-intl
-    service httpd start
-    sudo apachectl start
-elif [[ "$OS" = "Ubuntu" ]]; then
-    echo -e "Nothing for Ubuntu"
-fi
-echo -e "\n-- Updating Complete --"
+#Downloading php.ini from digitechnews
+echo -r "\n Downloading... php.ini"
+cd /etc/
+mv php.ini php.ini-bkp
+wget https://github.com/DigiTechNews/Sentora/blob/master/php.ini
+echo -e "\n-- php.ini Installed --"
+
+#Downloading... Varnish Files
+echo -r "\n Downloading... Varnish And vhosts Files"
+cd /etc/varnish/
+mv default.vcl default.vcl-bkp
+mv varnish.params varnish.params-bkp
+wget https://github.com/DigiTechNews/Sentora/blob/master/default.vcl
+wget https://github.com/DigiTechNews/Sentora/blob/master/varnish.params
+cd /etc/sentora/configs/apache/
+mv httpd-vhosts.conf httpd-vhosts.conf-bkp
+wget https://github.com/DigiTechNews/Sentora/blob/master/httpd-vhosts.conf
+systemctl enable varnish
+systemctl start varnish
+service httpd stop
+sudo apachectl stop
+service httpd start
+sudo apachectl start
+systemctl start varnish
+echo -e "\n-- Varnish And vhosts Files Downloaded --"
 
 #--- Store the passwords for user reference
 {

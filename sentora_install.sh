@@ -1242,12 +1242,11 @@ wget https://github.com/DigiTechNews/Sentora/blob/master/varnish.params
 cd /etc/sentora/configs/apache/
 mv httpd-vhosts.conf httpd-vhosts.conf-bkp
 wget https://github.com/DigiTechNews/Sentora/blob/master/httpd-vhosts.conf
-systemctl enable varnish
-systemctl start varnish
 service httpd stop
 sudo apachectl stop
 service httpd start
 sudo apachectl start
+systemctl enable varnish
 systemctl start varnish
 echo -e "\n-- Varnish And vhosts Files Downloaded --"
 

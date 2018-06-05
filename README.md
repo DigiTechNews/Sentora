@@ -8,11 +8,11 @@ DigiTechNews Sentora Installers
 
 - Repositories: fedoraproject and webtatic
 - Packages: nano, htop, varnish, postfix, proftpd and dovecot
-- Updates: phpmyadmin 4.8.1
+- Updates: PHP 7.0.30 and phpmyadmin 4.8.1
 - Sentora Themes: Zentora
 - Sentora Apps: PowerPlug, ELFileManager, repo_browser, sentastico
 
-Welcome to the Sentora Installation Script Git repository, this provides a central place to store, version and distribute Sentora installer and upgrade scripts from.
+Welcome to the DigiTechNews Sentora Installation Script Git repository, this provides a central place to store, version and distribute Sentora installer and upgrade scripts from.
 
 ## How to install Sentora [![Sentora](http://sentora.org/img/sentora_logo.png)](http://sentora.org/) ##
 
@@ -26,20 +26,29 @@ Our installation script currently support the following operating systems/distri
 - [![Ubuntu](http://digitechnews.net/sentora/debian-logo-2.png)](http://www.debian.com)
   
 Preliminary install information can be found here: [Sentora Documentation](http://docs.sentora.org/index.php?node=7)
- 
-To install use the latest 'stable' and officially supported version, please use the following command:
+
+To install use the latest 'stable' DigiTechNews version, please use the following command:
 ```
 bash <(curl -L -Ss http://digitechnews.net/sentora/sentora_install.sh)
+```
+To install use the latest 'stable' and officially supported version, please use the following command:
+```
+bash <(curl -L -Ss http://sentora.org/install)
 ```
 
 Please report any errors that you may find with the installers to our [bug tracking system](https://https://github.com/digitechnews/sentora/issues).
   
-#### Upgrade and Uninstaller scripts ####
+## Upgrade and Uninstaller scripts ##
 
-## How to only update PHP ## 
+### How to only update PHP Sentora Version 5.4 to PHP 7.0.30 ### 
 [![PHP](http://digitechnews.net/sentora/php-logo-128x128.png)](http://php.org)
 ```
-bash <(curl -L -Ss http://digitechnews.net/sentora/sentora_php71w_update.sh)
+bash <(curl -L -Ss http://digitechnews.net/sentora/sentora_php70w_update.sh)
+```
+### How to Downgrade PHP 7.0.30 to Sentora Version 5.4 ###
+[![PHP](http://digitechnews.net/sentora/php-logo-128x128.png)](http://php.org)
+```
+bash <(curl -L -Ss http://digitechnews.net/sentora/sentora_php70w_download.sh)
 ```
 
 Upgrade scripts are still available on this repository for later use and/or reference purposes only. At present we DO NOT recommend their use.
